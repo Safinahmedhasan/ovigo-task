@@ -1,0 +1,56 @@
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio for video */
+    overflow: hidden;
+}
+
+video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 8px 16px;
+    border-radius: 8px;
+}
+
+.travel-text {
+    margin: 0;
+    font-size: 32px;
+    color: white;
+    line-height: 1.3;
+}
+
+.travel-text span {
+    opacity: 0;
+    display: inline-block;
+    transition: opacity 0.5s;
+}
+
+.travel-text span.active {
+    opacity: 1;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .text-overlay {
+        padding: 6px 12px;
+        border-radius: 6px;
+    }
+
+    .travel-text {
+        font-size: 16px;
+    }
+}
